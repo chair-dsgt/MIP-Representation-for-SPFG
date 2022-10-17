@@ -1,2 +1,10 @@
 # MIP-Representation-for-SPFG
 This repository contains code to represent and solve SPFGs using a compact MIP-representation
+
+- File `SymPartiFind.py` models and solve a symmetric partition function form game (SPFG), given a number of players `N` or given a matrix `A`. Matrix `A` of dimension `N^2` is a concise way to write a SPFG. It can be exact if `N<=5` or under more conditions if `N>5`. Else, the SPFG must be approximated by using the least squares method.
+- File `RankCheck.py` performs a check on a SPFG in dictionary form to see if it is convertible to a matrix `A` for using our representation. It also contains a method to convert a dictionary representing a full SPFG to a matrix `A`.
+- File `RankStudy.py` computes the rank of matrix `Q`, which contains every numerical partition containing at least one coalition of cardinality `N-h`, where `N` is the number of players in the game and `h` is the index of the column of matrix `A` stocking the values for coalitions counting `N-h` players. The rank of matrix `Q` gives us the representation power for any SPFG, simply based on `N` and `N-h`.
+- File `PriceExample.py` contains a Bertrand price example set up as in [this article](https://doi.org/10.1287/mnsc.1060.0605) by Nagarajan et al., and inspired by [this article](https://doi.org/10.1016/j.ejor.2020.07.039) by Basso et al. It also contains a main function performing, for an assortment of parameters, the creation of a SPFG dictionary corresponding to the Bertrand problem using `RankStudy.py`, the conversion of the dictionary into a matrix `A` using `RankCheck.py`, the solving of the mixed-integer linear programme using `SymPartiFind.py` and the printing of the results into a csv file.
+- File `ConvexSymPartiFind.py` attempts to do the same thing as `SymPartiFind.py`, but with a convexified version of the problem that is using the McCormick envelopes, to see if this would cause any gain of speed. It does not.
+
+This work was done in the context of a master's degree. The link to the thesis will be available soon.
