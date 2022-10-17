@@ -1,0 +1,8 @@
+cff-version: 0.0.1
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Pepin
+    given-names: Justine
+title: "MIP-Representation-for-SPFG"
+version: 0.0.1
+date-released: 2022-10-17
